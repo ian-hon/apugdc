@@ -5,6 +5,7 @@ import headerBackground from "./assets/space.jpg";
 import Image from "next/image";
 import CountUp from "react-countup";
 import Footer from "./footer";
+import Link from "next/link";
 
 const data = [
     {
@@ -76,6 +77,11 @@ export default function Home() {
                         What is APUGDC?
                     </h3>
                 </a>
+                <Link href="/hall-of-fame">
+                    <h3>
+                        Hall of Fame
+                    </h3>
+                </Link>
             </div>
             <div className={styles.hr}/>
             <div id={styles.eventContainer}>

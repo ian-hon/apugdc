@@ -12,23 +12,26 @@ export default function Footer(): React.JSX.Element {
         <div id={styles.footer}>
             <div>
                 <a>
-                    <Image src={twitter} alt=""/>
+                    <Image src={twitter} alt="Twitter"/>
                 </a>
                 <a>
-                    <Image src={facebook} alt=""/>
+                    <Image src={facebook} alt="Facebook"/>
                 </a>
                 <a>
-                    <Image src={instagram} alt=""/>
+                    <Image src={instagram} alt="Instagram"/>
                 </a>
                 <a>
-                    <Image src={mail} alt=""/>
+                    <Image src={mail} alt="Email"/>
                 </a>
                 <a>
-                    <Image src={discord} alt=""/>
+                    <Image src={discord} alt="Discord"/>
                 </a>
             </div>
             <a href="https://www.github.com/Asianerd">
                 website by ian
+            </a>
+            <a href="https://github.com/Miisan-png">
+                and azar
             </a>
         </div>
     )
