@@ -4,6 +4,8 @@
     /* --background-secondary: #000;
     --background-tertiary: #000; */
     --foreground: #fff;
+
+    --border-radius:10px;
 }
 
 html,
