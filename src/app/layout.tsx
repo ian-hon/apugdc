@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Roboto_Mono, Fira_Code } from 'next/font/google';
+import { Roboto_Mono, Fira_Code, Nunito_Sans } from 'next/font/google';
 import "./globals.css";
 
 const nasaliza = localFont({
@@ -8,8 +8,9 @@ const nasaliza = localFont({
     variable: "--nasaliza-font",
     weight: "100 900",
 });
-const robotomono = Roboto_Mono({ subsets: ['latin', 'latin-ext'], variable: '--robotomono-font'});
-const firacode = Fira_Code({ subsets: ['latin', 'latin-ext'], variable: '--firacode-font'});
+const nunitosans = Nunito_Sans({ subsets: ['latin', 'latin-ext'], variable: '--nunitosans-font' });
+const robotomono = Roboto_Mono({ subsets: ['latin', 'latin-ext'], variable: '--robotomono-font' });
+const firacode = Fira_Code({ subsets: ['latin', 'latin-ext'], variable: '--firacode-font' });
 
 export const metadata: Metadata = {
     title: "APUGDC",
@@ -23,7 +24,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${nasaliza.variable} ${robotomono.variable} ${firacode.variable}`}>
+            <body className={`${nasaliza.variable} ${robotomono.variable} ${firacode.variable} ${nunitosans.variable}`}>
                 {children}
             </body>
         </html>

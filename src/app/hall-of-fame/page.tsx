@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./hall-of-fame.module.css";
-import Footer from "../footer";
+import Footer from "../components/footer";
 import Link from "next/link";
 
 const committeeMembers = [
