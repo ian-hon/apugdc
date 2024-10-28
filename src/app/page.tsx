@@ -31,62 +31,6 @@ const counterData = [
     },
 ]
 
-const infoSection = [
-    [
-        'Events',
-        <div id={styles.info}>
-            <h2>
-                Past & Upcoming Events
-            </h2>
-        </div>
-    ],
-    [
-        'R&D',
-        <div id={styles.rnd}>
-            <h2 id={styles.header}>
-                Join our R&D Team to Shape Your Future in The Gaming Industry!
-            </h2>
-            <h3 id={styles.subheader}>
-                What are you waiting for? Join our R&D department & collaborate with like-minded peers to work on various projects & do research.
-            </h3>
-            {/* <div id={styles.join}>
-                <Link id={styles.link} href="https://forms.gle/xRNK1CXzDuJRJgug8" target="_blank">
-                    <h2>
-                        Join now
-                    </h2>
-                </Link>
-                <h3>
-                    plus, it would look good on your resumé 😏
-                </h3>
-            </div> */}
-            <Link href="https://forms.gle/xRNK1CXzDuJRJgug8" target="_blank">
-                <h2>
-                    Learn more
-                </h2>
-                <div/>
-            </Link>
-        </div>
-    ],
-    [
-        'Hall of Fame',
-        <div id={styles.info}>
-            <h2>
-                Hall of Fame
-            </h2>
-        </div>
-    ],
-    [
-        'About APUGDC',
-        <div id={styles.about}>
-            <h2>Welcome to the <b>APU Game Development Club!</b></h2>
-            <h3>We're here to promote the development of video games, and we host <b>workshops, game jams</b> and <b>many more</b> to encourage everyone to learn about <u>game design and development</u>.</h3>
-            <h3>We are open to students of <u>all levels of experience.</u></h3>
-            <Link id={styles.link} href=""><h2>Join us and find out more!</h2></Link>
-        </div>
-    ],
-]
-
-
 export default function Home() {
     const [prevScroll, setPrevScroll] = useState(0);
     const [scrollAmount, setScrollAmount] = useState(0);
@@ -109,9 +53,9 @@ export default function Home() {
                     </h2>
                     <div className={styles.hr}/>
                 </Link>
-                <Link href="/rnd">
+                <Link href="/showcase">
                     <h2>
-                        R&D Program
+                        Showcase
                     </h2>
                     <div className={styles.hr}/>
                 </Link>
