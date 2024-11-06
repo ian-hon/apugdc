@@ -4,6 +4,9 @@ import styles from "./hall-of-fame.module.css";
 import Footer from "../components/footer";
 import Link from "next/link";
 
+import temp_pfp from './assets/guests_of_honor/discord.png';
+import Image from "next/image";
+
 const committeeMembers = [
     { year: 2024, members: [
         { name: "Kudoshi", role: "President" },
@@ -14,6 +17,54 @@ const committeeMembers = [
     ]},
     // We gotta add more members hereeeeeeeee
 ];
+
+const honoredGuests = [
+    {
+        name: "John Doe",
+        description: "renowned game developer",
+        img: temp_pfp
+    },
+    {
+        name: "Larian studios",
+        description: "creators of Baldur's Gate",
+        img: temp_pfp
+    },
+    {
+        name: "John Doe",
+        description: "renowned game developer",
+        img: temp_pfp
+    },
+    {
+        name: "Larian studios",
+        description: "creators of Baldur's Gate",
+        img: temp_pfp
+    },
+    {
+        name: "John Doe",
+        description: "renowned game developer",
+        img: temp_pfp
+    },
+    {
+        name: "Larian studios",
+        description: "creators of Baldur's Gate",
+        img: temp_pfp
+    },
+    {
+        name: "John Doe",
+        description: "renowned game developer",
+        img: temp_pfp
+    },
+    {
+        name: "Larian studios",
+        description: "creators of Baldur's Gate",
+        img: temp_pfp
+    },
+    {
+        name: "John Doe",
+        description: "renowned game developer",
+        img: temp_pfp
+    },
+]
 
 export default function HallOfFame() {
     return (
@@ -45,4 +96,20 @@ export default function HallOfFame() {
             <Footer />
         </div>
     );
+}
+
+export function HonoredGuests({ custom_style={} } : { custom_style?: any }) {
+    return (
+        <div id={styles.honoredGuests} style={custom_style}>
+            {
+                honoredGuests.map((e) => (
+                    <div className={styles.guest} key={e.name}>
+                        <Image src={e.img} alt=''/>
+                        <h2>{e.name}</h2>
+                        <h3>{e.description}</h3>
+                    </div>
+                ))
+            }
+        </div>
+    )
 }

@@ -8,6 +8,12 @@ import Footer from "./components/footer";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+import NavBar from "./components/navbar";
+import { HonoredGuests } from "./hall-of-fame/page";
+import { ordinalise } from "./util";
+
+// feels like this value shouldnt be separated
+const memberCount = 400;
 const counterData = [
     {
         number: 4,
@@ -15,7 +21,7 @@ const counterData = [
         link: ''
     },
     {
-        number: 400,
+        number: memberCount,
         description: 'Members and counting',
         link: ''
     },
@@ -46,36 +52,7 @@ export default function Home() {
 
     return (
         <div id={styles.page}>
-            <div id={styles.navbar} aria-label={scrollAmount > 0 ? 'open' : ''}>
-                <Link href="/events">
-                    <h2>
-                        Events
-                    </h2>
-                    <div className={styles.hr}/>
-                </Link>
-                <Link href="/showcase">
-                    <h2>
-                        Showcase
-                    </h2>
-                    <div className={styles.hr}/>
-                </Link>
-                <Link href="/hall-of-fame">
-                    <h2>
-                        Hall of Fame
-                    </h2>
-                    <div className={styles.hr}/>
-                </Link>
-                <Link id={styles.join} onClick={() => {
-                    console.log("pressed");
-                }} href="">
-                    <h2>
-                        <b>
-                            Join us
-                        </b>
-                    </h2>
-                    <div className={styles.hr}/>
-                </Link>
-            </div>
+            <NavBar scrollAmount={scrollAmount} />
             <div id={styles.titleHeader}>
                 <div id={styles.info}>
                     <h1>
@@ -86,15 +63,23 @@ export default function Home() {
                     </h2>
                     <Link id={styles.join} title="it's free!" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfQH_7SUjGGpFqssLeJK67P60P8Yei32xYar-dVQ-3joDpR0g/viewform?usp=pp_url">
                         Join APUGDC!
+                        {/* Be the {ordinalise(memberCount + 1)} member */}
+                        {/* TODO : revisit this */}
                     </Link>
                 </div>
                 <Image id={styles.headerBackground} src={headerBackground} alt=""/>
+            </div>
+            <div className={styles.displayContainer} id={styles.honoredGuests}>
+                <h2>
+                    Guests of Honour
+                </h2>
+                <HonoredGuests/>
             </div>
             <div id={styles.counterContainer}>
                 {
                     counterData.map((e) => 
                         (
-                            <div className={styles.info}>
+                            <div className={styles.info} key={e.description}>
                                 <div>
                                     <CountUp end={e.number} duration={5} />
                                     <div/>
@@ -121,6 +106,27 @@ export default function Home() {
                             it'll look good on your resumé 😏
                         </h3>
                     </div>
+                </div>
+            </div>
+            <div className={styles.displayContainer} id={styles.events}>
+                <h2>
+                    Events
+                </h2>
+                <h3>
+                    Check out our past events!
+                </h3>
+                <div id={styles.container}>
+                </div>
+            </div>
+            <div className={styles.displayContainer} id={styles.showcase}>
+                <h2>
+                    Showcase
+                </h2>
+                <h3>
+                    Check out our club's work!
+                </h3>
+                <div id={styles.container}>
+
                 </div>
             </div>
             <Footer/>

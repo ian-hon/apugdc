@@ -14,75 +14,6 @@
     background-color:var(--background);
 }
 
-#navbar {
-    position:fixed;
-
-    top: 0;
-    /* right:0; */
-
-    z-index: 10;
-
-    display:flex;
-    justify-content: space-evenly;
-    align-items: center;
-
-    width:max-content;
-
-    margin:1em 2ch 0 0;
-
-    padding:0.9em 2ch;
-
-    background:#0008;
-
-    border-style:solid;
-    border-width:1.5px;
-    border-color:#fff5;
-
-    backdrop-filter:blur(10px);
-
-    border-radius:var(--border-radius);
-
-    transition-duration:0.3s;
-
-    &[aria-label="open"] {
-        opacity: 0;
-    }
-
-    & a {
-        margin: 0 2ch -0.2ch 2ch;
-
-        .hr {
-            margin:0 auto;
-
-            width:0px;
-
-            transition-duration: 0.15s;
-            transition-timing-function:cubic-bezier(0.39, 0.575, 0.565, 1);
-        }
-
-        & h2 {
-            opacity: 0.8;
-
-            font-size:1.2rem;
-            font-weight:400;
-            font-family:var(--robotomono-font);
-
-            transition-duration: 0.3s;
-            transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-        }
-
-        &:hover {
-            & .hr {
-                width:100%;
-            }
-
-            & h2 {
-                opacity: 1;
-            }
-        }
-    }
-}
-
 #titleHeader {
     position:relative;
 
@@ -153,6 +84,16 @@
     }
 }
 
+#honoredGuests {
+    width:100%;
+
+    & > h2 {
+        font-size:2.2rem;
+
+        margin-bottom:1em;
+    }
+}
+
 #counterContainer {
     width:80%;
 
@@ -192,6 +133,99 @@
         }
     }
 }
+
+#about {
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+    margin-top:3em;
+    margin-bottom:5em;
+    width:70%;
+
+    & h2, & h3 {
+        font-weight:400;
+        font-family: var(--nunitosans-font);
+    }
+
+    & > h2 {
+        font-size:2rem;
+        width:100%;
+
+        margin-bottom:1em;
+
+        text-align: center;
+    }
+
+    & > div {
+        width:80%;
+
+        margin: auto;
+
+        & h3 {
+            font-size:1.3rem;
+    
+            margin-top: 1em;
+    
+            text-underline-offset: 0.17em;
+            /* word-spacing: 0.2ch; */
+            /* text-decoration */
+        }
+    
+        & > div {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+    
+            /* margin-top:1em; */
+    
+            width:100%;
+    
+            & a {
+                margin:3em auto 0 auto;
+            }
+    
+            & h3 {
+                margin:0;
+    
+                font-style:italic;
+                font-size:1rem;
+    
+                opacity: 0.5;
+            }
+        }
+    }
+}
+
+.displayContainer {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    margin:5rem 0;
+
+    width:80%;
+
+    & h2, & h3 {
+        font-family:var(--nunitosans-font);
+        font-weight:500;
+    }
+
+    & h2 {
+        font-size:1.8rem;
+    }
+
+    & h3 {
+        font-size:1.2rem;
+        opacity: 0.5;
+        font-style:italic;
+    }
+}
+
 
 .hr {
     height:0.2ch;
@@ -272,70 +306,4 @@
         object-fit: contain;
     }
 }
-
-#about {
-    display:flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-
-    margin-top:3em;
-    margin-bottom:5em;
-    width:70%;
-
-    & h2, & h3 {
-        font-weight:400;
-        font-family: var(--nunitosans-font);
-    }
-
-    & > h2 {
-        font-size:2rem;
-        width:100%;
-
-        margin-bottom:1em;
-
-        text-align: center;
-    }
-
-    & > div {
-        width:80%;
-
-        margin: auto;
-
-        & h3 {
-            font-size:1.3rem;
-    
-            margin-top: 1em;
-    
-            text-underline-offset: 0.17em;
-            /* word-spacing: 0.2ch; */
-            /* text-decoration */
-        }
-    
-        & > div {
-            display:flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-    
-            /* margin-top:1em; */
-    
-            width:100%;
-    
-            & a {
-                margin:3em auto 0 auto;
-            }
-    
-            & h3 {
-                margin:0;
-    
-                font-style:italic;
-                font-size:1rem;
-    
-                opacity: 0.5;
-            }
-        }
-    }
-}
-
 
