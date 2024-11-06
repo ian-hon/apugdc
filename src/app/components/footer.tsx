@@ -6,11 +6,11 @@ import discord from '../assets/sns/discord.png';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import './footer.css';
+import styles from './footer.module.css';
 
 export default function Footer(): React.JSX.Element {
     return (
-        <div id={"footer"}>
+        <div id={styles.footer}>
             <div>
                 <Link href="">
                     <Image src={twitter} alt="Twitter"/>
