@@ -9,7 +9,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import NavBar from "./components/navbar";
-import { HonoredGuests } from "./hall-of-fame/page";
+import { HonoredGuests } from "./components/honoredGuests";
 import { ordinalise } from "./util";
 
 // feels like this value shouldnt be separated
