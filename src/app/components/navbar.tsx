@@ -12,6 +12,10 @@ const navbarItems = [
         href: 'showcase'
     },
     {
+        name: 'GGW',
+        href: 'ggw'
+    },
+    {
         name: 'Hall of Fame',
         href: 'hall-of-fame'
     }

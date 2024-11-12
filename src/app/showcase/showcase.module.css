@@ -1,0 +1,137 @@
+#showcase {
+    display:flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    width:100%;
+}
+
+#header {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    width:100%;
+
+    height:30em;
+
+    & h1, & h2 {
+        font-family:var(--opensans-font);
+        font-weight: 500;
+    }
+
+    & h1 {
+        font-size:3rem;
+    }
+
+    & h2 {
+        font-style:italic;
+        opacity: 0.5;
+        font-weight:400;
+    }
+}
+
+#content {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    width:100%;
+
+    margin-bottom:5em;
+
+    & #search {
+        & #filter {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+
+            flex-direction: row;
+
+            margin: 1em 0 3em 0;
+
+            & h2 {
+                opacity: 0.5;
+                user-select: none;
+                cursor: pointer;
+
+                font-family:var(--robotomono-font);
+                font-weight:400;
+                font-size:1rem;
+
+                margin: 0 1ch;
+
+                transition-duration:0.3s;
+
+                &[aria-label="true"] {
+                    opacity: 1;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        & #query {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+
+            background:none;
+
+            border:none;
+            border-style:solid;
+            border-color:white;
+            border-width:1px;
+            border-radius:var(--border-radius);
+
+            font-size:1.5rem;
+
+            height:1.5em;
+            padding:1em 1ch;
+
+            transition-duration:0.3s;
+
+            &:not(:has(input:focus)) {
+                opacity: 0.75;
+            }
+
+            & img {
+                font-size: 1.5rem;
+                margin:0.25em;
+                height:1em;
+                width:1em;
+
+                cursor:pointer;
+            }
+
+            & input {
+                background:none;
+                color:var(--foreground);
+
+                font-size:1.5rem;
+
+                height:inherit;
+
+                outline:none;
+                font-family:var(--robotomono-font);
+
+                &::placeholder {
+                    font-style:italic;
+                }
+            }
+        }
+    }
+
+    & #results {
+        display:grid;
+        gap:1em 2ch;
+        grid-template-columns: auto auto;
+    }
+}
