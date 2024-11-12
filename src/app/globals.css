@@ -7,6 +7,7 @@
     --foreground: #fff;
 
     --border-radius:10px;
+    --border-radius-heavy: 1.5rem;
 }
 
 html,
