@@ -46,7 +46,9 @@
             & #description {
                 font-size:0.7rem;
 
-                
+                & h2 {
+                    font-size:2rem;
+                }
             }
 
             & #gradient {
@@ -104,8 +106,6 @@
         & #description {
             z-index: 100;
 
-            font-size:1rem;
-
             padding:1em 5ch;
 
             & h2, & h3 {
@@ -114,11 +114,11 @@
             }
     
             & h2 {
-                font-size:3em;
+                font-size:3rem;
             }
     
             & h3 {
-                font-size:1em;
+                font-size:1rem;
             }
         }
 
