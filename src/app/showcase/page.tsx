@@ -8,6 +8,8 @@ import searchIcon from '../assets/search.png';
 import { ReturnButton } from '../components/returnButton';
 import { useState } from "react";
 import Image from "next/image";
+import { redirect } from "next/navigation";
+import Link from "next/link";
 
 const gameShowcase = [
     {
@@ -83,6 +85,11 @@ export default function Showcase() : React.JSX.Element {
                         )).map((e) => <iframe key={e.name + e.author} frameBorder="0" src={removeAmpEncode(e.embedURL)} width="550" height="150"></iframe>)
                     }
                 </div>
+            </div>
+            <div id={styles.submission}>
+                <Link href={'/submission'}>
+                    I want my game here!
+                </Link>
             </div>
             <Footer/>
         </div>
