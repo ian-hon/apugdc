@@ -32,9 +32,7 @@ export default function NavBar({ scrollAmount } : { scrollAmount: number }) {
                     </Link>
                 ))
             }
-            <Link id={styles.join} onClick={() => {
-                console.log("pressed");
-            }} href="">
+            <Link id={styles.join} href="https://docs.google.com/forms/d/e/1FAIpQLSfQH_7SUjGGpFqssLeJK67P60P8Yei32xYar-dVQ-3joDpR0g/viewform?usp=pp_url">
                 <h2>
                     <b>
                         Join us
