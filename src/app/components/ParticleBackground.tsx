@@ -21,7 +21,7 @@ const ParticleBackground: React.FC = () => {
         if (!ctx) return;
 
         let particles: Particle[] = [];
-        let backgroundOpacity = 1.0;
+        let backgroundOpacity = Math.max(1 - (scrollY / window.innerHeight), 0);
 
         const resizeCanvas = () => {
             if (canvas && window) {
