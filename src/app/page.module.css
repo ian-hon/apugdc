@@ -15,72 +15,55 @@
 }
 
 #titleHeader {
-    position:relative;
-
-    display:flex;
+    position: relative;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
-    height:100vh;
-    width:100vw;
+    height: 100vh;
+    width: 100vw;
 
     & #info {
-        position:relative;
+        position: relative;
         z-index: 5;
+        text-align: center;
 
         & h1 {
             font-family: var(--nasaliza-font);
-            font-size:180px;
+            font-size: 180px;
         }
     
         & h2 {
-            font-size:20px;
-            font-style:italic;
-            font-family:var(--robotomono-font);
+            font-size: 20px;
+            font-style: italic;
+            font-family: var(--robotomono-font);
             font-weight: 500;
             text-align: center;
         }
     }
 
     & #join {
-        position:absolute;
+        position: absolute;
         top: calc(100% + 3ch);
-
-        left:50%;
-        transform:translateX(-50%);
-
-        width:fit-content;
-
-        border-style:solid;
-        border-color:white;
-        border-radius:var(--border-radius);
-        border-width:1px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: fit-content;
+        border-style: solid;
+        border-color: white;
+        border-radius: var(--border-radius);
+        border-width: 1px;
         padding: 1em 3ch;
-
-        transition-duration:0.3s;
+        transition-duration: 0.3s;
         transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-
-        cursor:pointer;
-
-        font-family:var(--robotomono-font);
-        font-weight:600;
+        cursor: pointer;
+        font-family: var(--robotomono-font);
+        font-weight: 600;
+        z-index: 5;
 
         &:hover {
-            background:white;
-            color:var(--background);
+            background: white;
+            color: var(--background);
         }
-    }
-
-    & #headerBackground {
-        position:absolute;
-    
-        filter:brightness(0.3);
-    
-        height:100%;
-        width:100%;
-    
-        object-fit: cover;
     }
 }
 

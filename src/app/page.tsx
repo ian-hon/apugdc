@@ -1,13 +1,12 @@
 "use client";
 
 import styles from "./page.module.css";
-import headerBackground from "./assets/space.jpg";
 import Image from "next/image";
 import CountUp from "react-countup";
 import Footer from "./components/footer";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
+import ParticleBackground from "./components/ParticleBackground";
 import NavBar from "./components/navbar";
 import { HonoredGuests } from "./components/honoredGuests";
 
@@ -51,6 +50,7 @@ export default function Home() {
 
     return (
         <div id={styles.page}>
+        <ParticleBackground />
             <NavBar scrollAmount={scrollAmount} />
             <div id={styles.titleHeader}>
                 <div id={styles.info}>
@@ -66,7 +66,6 @@ export default function Home() {
                         {/* TODO : revisit this */}
                     </Link>
                 </div>
-                <Image id={styles.headerBackground} src={headerBackground} alt=""/>
             </div>
             <div className={styles.displayContainer} id={styles.honoredGuests}>
                 <h2>

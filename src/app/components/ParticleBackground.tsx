@@ -11,6 +11,7 @@ interface Particle {
 
 const ParticleBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const animationFrameRef = useRef<number>();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -19,12 +20,13 @@ const ParticleBackground: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    let animationFrameId: number;
     let particles: Particle[] = [];
 
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      if (canvas && window) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
     };
 
     const createParticles = () => {
@@ -44,6 +46,8 @@ const ParticleBackground: React.FC = () => {
     };
 
     const drawParticles = () => {
+      if (!ctx || !canvas) return;
+      
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       particles.forEach((particle) => {
@@ -59,25 +63,43 @@ const ParticleBackground: React.FC = () => {
         if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
       });
 
-      animationFrameId = requestAnimationFrame(drawParticles);
+      animationFrameRef.current = requestAnimationFrame(drawParticles);
+    };
+
+    const handleResize = () => {
+      resizeCanvas();
+      createParticles();
     };
 
     resizeCanvas();
     createParticles();
     drawParticles();
 
-    window.addEventListener('resize', () => {
-      resizeCanvas();
-      createParticles();
-    });
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      cancelAnimationFrame(animationFrameId);
-      window.removeEventListener('resize', resizeCanvas);
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
-  return <canvas ref={canvasRef} style={{ position: 'absolute', top: 0, left: 0, zIndex: -1 }} />;
+  return (
+    <canvas 
+      ref={canvasRef} 
+      style={{ 
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        zIndex: 1,
+        pointerEvents: 'none',
+        background: 'transparent'
+      }} 
+    />
+  );
 };
 
 export default ParticleBackground;
