@@ -28,8 +28,6 @@ const ParticleBackground: React.FC = () => {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
             }
-
-            console.log('resized');
         };
 
         const createParticles = () => {
