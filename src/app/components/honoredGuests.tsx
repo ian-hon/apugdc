@@ -13,41 +13,41 @@ const honoredGuests = [
         description: "creators of Baldur's Gate",
         img: temp_pfp
     },
-    {
-        name: "John Doe",
-        description: "renowned game developer",
-        img: temp_pfp
-    },
-    {
-        name: "Larian studios",
-        description: "creators of Baldur's Gate",
-        img: temp_pfp
-    },
-    {
-        name: "John Doe",
-        description: "renowned game developer",
-        img: temp_pfp
-    },
-    {
-        name: "Larian studios",
-        description: "creators of Baldur's Gate",
-        img: temp_pfp
-    },
-    {
-        name: "John Doe",
-        description: "renowned game developer",
-        img: temp_pfp
-    },
-    {
-        name: "Larian studios",
-        description: "creators of Baldur's Gate",
-        img: temp_pfp
-    },
-    {
-        name: "John Doe",
-        description: "renowned game developer",
-        img: temp_pfp
-    },
+    // {
+    //     name: "John Doe",
+    //     description: "renowned game developer",
+    //     img: temp_pfp
+    // },
+    // {
+    //     name: "Larian studios",
+    //     description: "creators of Baldur's Gate",
+    //     img: temp_pfp
+    // },
+    // {
+    //     name: "John Doe",
+    //     description: "renowned game developer",
+    //     img: temp_pfp
+    // },
+    // {
+    //     name: "Larian studios",
+    //     description: "creators of Baldur's Gate",
+    //     img: temp_pfp
+    // },
+    // {
+    //     name: "John Doe",
+    //     description: "renowned game developer",
+    //     img: temp_pfp
+    // },
+    // {
+    //     name: "Larian studios",
+    //     description: "creators of Baldur's Gate",
+    //     img: temp_pfp
+    // },
+    // {
+    //     name: "John Doe",
+    //     description: "renowned game developer",
+    //     img: temp_pfp
+    // },
 ]
 
 
