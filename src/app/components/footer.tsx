@@ -11,7 +11,7 @@ import styles from './footer.module.css';
 export default function Footer(): React.JSX.Element {
     return (
         <div id={styles.footer}>
-            <div>
+            <div id={styles.linkContainer}>
                 <Link href="">
                     <Image src={twitter} alt="Twitter"/>
                 </Link>
