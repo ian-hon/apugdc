@@ -28,7 +28,7 @@ export default function Footer(): React.JSX.Element {
                     <Image src={discord} alt="Discord"/>
                 </Link>
             </div>
-            <Link href="https://www.github.com/Asianerd">
+            <Link href="https://www.github.com/ian-hon">
                 website by ian
             </Link>
             <Link href="https://github.com/Miisan-png">
