@@ -14,7 +14,7 @@ import { HonoredGuests } from "./components/honoredGuests";
 const memberCount = 400;
 const counterData = [
     {
-        number: 4,
+        number: 32,
         description: 'Past & upcoming events',
         link: ''
     },
@@ -29,8 +29,8 @@ const counterData = [
         link: ''
     },
     {
-        number: 35,
-        description: 'Committee members',
+        number: 54,
+        description: 'Current and past committees',
         link: ''
     },
 ]
@@ -91,9 +91,9 @@ export default function Home() {
             <div id={styles.about}>
                 <h2>Welcome to the <b>APU Game Development Club!</b></h2>
                 <div>
-                    <h3>We're here to promote the development of video games.</h3>
-                    <h3>We host <b>workshops, game jams</b> and <b>many more</b><br/>to encourage everyone to learn about <u>game design and development</u>.</h3>
-                    <h3>We are open to students of <u>all levels of experience.</u></h3>
+                    <div style="">We are a student-run game developer community from Asia Pacific University who are passionate about all aspects of game development</div>
+                    <h3>We host game dev events like <b>workshops, game jams, game dev festival</b> and <b>many more</b><br/>to encourage everyone to learn about <u>game design and development</u>.</h3>
+                    <h3>We are open to students of <u>all levels of experience.</u> whether you are a veteran in this field or have an interest in the magical world of game dev</h3>
                     <div>
                         <Link className={styles.link} href="https://docs.google.com/forms/d/e/1FAIpQLSfQH_7SUjGGpFqssLeJK67P60P8Yei32xYar-dVQ-3joDpR0g/viewform?usp=pp_url">
                             <h2>
