@@ -1,64 +1,19 @@
 "use client";
 
-import Image from "next/image";
 
 import Footer from "../components/footer";
 import { ReturnButton } from "../components/returnButton";
 
 import '../globals.css';
 import styles from './events.module.css';
+import Link from "next/link";
+import { eventData } from "../data/event_data";
+import { EventTileElement } from "../components/eventTileComponent";
 
-const eventData = [
-    {
-        assetDirectory: 'multiplayer_talk',
-        title: 'Multiplayer Talk',
-        host: 'Jon Tang',
-        time: 1729728000000,
-        location: 'APU Campus'
-    },
-    {
-        assetDirectory: 'multiplayer_talk',
-        title: 'Multiplayer Talk',
-        host: 'Jon Tang',
-        time: 1729728000000,
-        location: 'APU Campus'
-    },
-    {
-        assetDirectory: 'multiplayer_talk',
-        title: 'Multiplayer Talk',
-        host: 'Jon Tang',
-        time: 1729728000000,
-        location: 'APU Campus'
-    },
-]
 
 export default function Events() : React.JSX.Element {
-    let thumbnail = eventData[0];
-    let collection = eventData.slice(1);
-
-    function TileElement({t}: { t:any }) {
-        let time = new Date(t.time);
-
-        return (
-            <div className={styles.tile} key={t.assetDirectory}>
-                <div id={styles.info}>
-                    <div id={styles.description}>
-                        <h2>
-                            {t.title}
-                        </h2>
-                        <h3>
-                            by {t.host}  •  {time.getDate()}/{time.getMonth()}/{time.getFullYear()}  •  {t.location}
-                        </h3>
-                    </div>
-                    <div id={styles.gradient}/>
-                </div>
-                <div id={styles.headerImage}>
-                    <Image src={`/events/${t.assetDirectory}/thumbnail.png`} width={1000} height={1000} alt=''></Image>
-                </div>
-            </div>
-        )
-    };
-
+    let firstEventData = eventData[0];
+    let nextEventDatas = eventData.slice(1);
     return (
         <div id={styles.events}>
             <ReturnButton/>
@@ -67,20 +22,26 @@ export default function Events() : React.JSX.Element {
                     Events
                 </h2>
                 <h3>
-                    our past events
+                    Upcoming Events
                 </h3>
             </div>
             <div id={styles.content}>
-                <TileElement t={thumbnail} />
+                <EventTileElement t={firstEventData} />
                 <div id={styles.collection}>
                     {
-                        collection.map((t) => (
-                            <TileElement t={t}/>
+                        nextEventDatas.map((t) => (
+                            <EventTileElement t={t}/>
                         ))
                     }
+                </div>
+                <div id={styles.header}>
+                    <h3>
+                        <Link href={'https://www.instagram.com/apugdc/'}><u>Check out our past events here</u></Link>
+                    </h3>
                 </div>
             </div>
             <Footer/>
         </div>
     );
 }
+

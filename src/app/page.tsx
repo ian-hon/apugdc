@@ -8,7 +8,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import ParticleBackground from "./components/ParticleBackground";
 import NavBar from "./components/navbar";
-import { HonoredGuests } from "./components/honoredGuests";
+import { EventTileElement } from "./components/eventTileComponent";
+import { eventData } from "./data/event_data";
 
 // feels like this value shouldnt be separated
 const memberCount = 400;
@@ -67,12 +68,12 @@ export default function Home() {
                     </Link>
                 </div>
             </div>
-            <div className={styles.displayContainer} id={styles.honoredGuests}>
+            {/* <div className={styles.displayContainer} id={styles.honoredGuests}>
                 <h2>
                     Guests of Honour
                 </h2>
                 <HonoredGuests/>
-            </div>
+            </div> */}
             <div id={styles.counterContainer}>
                 {
                     counterData.map((e) => 
@@ -91,7 +92,7 @@ export default function Home() {
             <div id={styles.about}>
                 <h2>Welcome to the <b>APU Game Development Club!</b></h2>
                 <div>
-                    <div style="">We are a student-run game developer community from Asia Pacific University who are passionate about all aspects of game development</div>
+                    <h3>We are a student-run game developer community from Asia Pacific University who are passionate about all aspects of game development</h3>
                     <h3>We host game dev events like <b>workshops, game jams, game dev festival</b> and <b>many more</b><br/>to encourage everyone to learn about <u>game design and development</u>.</h3>
                     <h3>We are open to students of <u>all levels of experience.</u> whether you are a veteran in this field or have an interest in the magical world of game dev</h3>
                     <div>
@@ -111,22 +112,24 @@ export default function Home() {
                     Events
                 </h2>
                 <h3>
-                    Check out our past events!
+                    Our upcoming events
+                    <br/>
                 </h3>
-                <div id={styles.container}>
+                <div id={styles.contentContainer}>
+                    <EventTileElement t={eventData[0]}/>
                 </div>
             </div>
-            <div className={styles.displayContainer} id={styles.showcase}>
+            {/* <div className={styles.displayContainer} id={styles.showcase}>
                 <h2>
                     Showcase
                 </h2>
                 <h3>
-                    Check out our club's work!
+                    Check out our member's work!
                 </h3>
                 <div id={styles.container}>
-
+                    
                 </div>
-            </div>
+            </div> */}
             <Footer/>
         </div>
     );

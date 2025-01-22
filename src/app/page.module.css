@@ -246,3 +246,41 @@
         transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
     }
 }
+
+#contentContainer {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    margin-top: 10px;
+
+
+    & #collection {
+        display:grid;
+        grid-template-columns: auto auto;
+        gap: 1em 2ch;
+
+        width:100ch;
+
+        margin-top:1em;
+
+        & .tile {
+            width:calc(50ch - 1ch);
+            height:12.5em;
+
+            & #description {
+                font-size:0.7rem;
+
+                & h2 {
+                    font-size:2rem;
+                }
+            }
+
+            & #gradient {
+                background:linear-gradient(#0000, #0000,#0000, #0000, #000c, #000c, #000c);
+            }
+        }
+    }
+}

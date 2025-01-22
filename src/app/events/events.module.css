@@ -38,6 +38,7 @@
         width:100ch;
 
         margin-top:1em;
+        
 
         & .tile {
             width:calc(50ch - 1ch);
@@ -91,7 +92,7 @@
 
     & #info {
         position:relative;
-        top:0;
+        top:10;
         left:0;
 
         display:flex;
