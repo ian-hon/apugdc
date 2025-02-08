@@ -10,7 +10,7 @@ import { BACKEND_ADDRESS } from '../constants';
 function LeaderboardElement({ e, i }: { e: any, i: any }) {
     return <div className={styles.leaderboardElement}>
         <h3>
-            {e.name} {Math.random()}
+            {e.user.name}
         </h3>
         <h4>
             {i}
@@ -24,9 +24,7 @@ export default function Leaderboard() {
     useEffect(() => {
         fetch(`${BACKEND_ADDRESS}/leaderboard/fetch`)
         .then(r => r.json())
-        .then(r => {
-            let board = JSON.parse(r);
-        
+        .then(board => {
             changeBoard(board.sort((a: any, b: any) => b.points - a.points));
         })
     }, []);
@@ -46,10 +44,10 @@ export default function Leaderboard() {
                     [board[1], '8rem', 'silver'],
                     [board[0], '11rem', 'gold'],
                     [board[2], '5rem', 'brown']
-                ].map((e: any) => 
-                    <div className={styles.stand}>
+                ].map((e: any, index: any) => 
+                    <div className={styles.stand} key={index}>
                         <h3>
-                            {e[0].name}
+                            {e[0].user.name}
                         </h3>
                         <div id={styles.fill} style={{
                             backgroundColor:e[2].toString(),
@@ -63,7 +61,7 @@ export default function Leaderboard() {
         </div>
         <div id={styles.container}>
             {
-                board.slice(3).map((e: any, index: any) => <LeaderboardElement e={e} i={(index + 3)}/>)
+                board.slice(3).map((e: any, index: any) => <LeaderboardElement key={index} e={e} i={(index + 3)}/>)
             }
         </div>
         <div id={styles.explanation}>
