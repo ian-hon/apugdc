@@ -1,0 +1,1 @@
+export const BACKEND_ADDRESS = 'https://apugdc-backend.vercel.app';

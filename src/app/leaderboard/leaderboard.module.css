@@ -1,0 +1,117 @@
+#page {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding:5em 0;
+}
+
+#title {
+    font-family:var(--nunitosans-font);
+    font-size:2.3rem;
+    font-weight:500;
+}
+
+#podium {
+    display:flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: row;
+
+    margin-top:2em;
+
+    & .stand {
+        display:flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column;
+
+        height:15em;
+        width:8em;
+        margin:0.5em;
+
+        & #fill {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+
+            width:8rem;
+            border-radius:var(--border-radius);
+
+            font-family: var(--nunitosans-font);
+            font-weight: 1000;
+            font-size:1.8rem;
+        }
+
+        & h3 {
+            font-family:var(--robotomono-font);
+            font-weight:500;
+            font-size:1.4rem;
+            margin-bottom: 0.3em;
+        }
+    }
+}
+
+#container {
+    min-width:30%;
+    margin:2em 0 10em 0;
+}
+
+.leaderboardElement {
+    position:relative;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    width:100%;
+    height:3em;
+
+    border-style:solid;
+    border-width: 0;
+    border-top-width: 1px;
+    border-color:#fff5;
+
+    &:last-of-type {
+        border-bottom-width: 1px;
+    }
+
+    & h3 {
+        font-family:var(--robotomono-font);
+    }
+
+    & h4 {
+        position:absolute;
+
+        left:1ch;
+
+        font-family: var(--robotomono-font);
+        opacity: 0.8;
+    }
+}
+
+#explanation {
+    width:50%;
+    margin-bottom:10em;
+
+    & h4 {
+        font-size: 2rem;
+        font-family: var(--nunitosans-font);
+        font-weight:500;
+
+        transform:skewX(-10deg);
+    }
+
+    & h5 {
+        font-size:1.2rem;
+        font-family: var(--nunitosans-font);
+        font-weight:400;
+    }
+}
+
+#construction {
+    font-family: var(--robotomono-font);
+
+    margin:5em 0;
+}

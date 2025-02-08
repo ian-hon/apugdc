@@ -12,6 +12,10 @@ const navbarItems = [
         href: 'showcase'
     },
     {
+        name: 'Leaderboard',
+        href: 'leaderboard'
+    },
+    {
         name: 'GGW',
         href: 'ggw'
     },
