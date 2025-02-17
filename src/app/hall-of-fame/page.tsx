@@ -5,6 +5,7 @@ import Footer from "../components/footer";
 import Link from "next/link";
 import React from "react";
 import { ReturnButton } from "../components/returnButton";
+import AdminCodeDetector from "../components/adminEntry";
 
 const committeeMembers = [
     { year: '2023', members: [
@@ -103,6 +104,8 @@ export default function HallOfFame() {
             </Link>
             
             <Footer />
+
+            <AdminCodeDetector/>
         </div>
     );
 }
