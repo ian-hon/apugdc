@@ -26,6 +26,9 @@ export default function Leaderboard() {
     const [allEntries, changeAllEntries] = useState<any[]>([]);
 
     const [committeeView, changeCommitteeView] = useState<boolean>(false);
+    const [nameQuery, changeNameQuery] = useState<string>('');
+
+    const [queried, changeQueried] = useState<any[]>([]);
 
     useEffect(() => {
         let result = [
@@ -81,7 +84,7 @@ export default function Leaderboard() {
     }, []);
 
     function filterBoard(all: any[]) {
-        changeBoard(all.filter((x) => x.isCommittee == committeeView));
+        changeBoard(all.filter((x) => (x.isCommittee == committeeView)));
     }
 
     return <div id={styles.page}>
@@ -92,14 +95,32 @@ export default function Leaderboard() {
         <h1 id={styles.title}>
             APUGDC 2025 Battlepass
         </h1>
-        <div id={styles.tabSelection}>
-            <h2 onClick={() => { changeCommitteeView(false); filterBoard(allEntries); }} id={styles.tabItem} aria-label={committeeView ? '' : 'active'}>
-                members
-            </h2>
-            <h2 onClick={() => { changeCommitteeView(true); filterBoard(allEntries); }} id={styles.tabItem} aria-label={committeeView ? 'active' : ''}>
-                committees
-            </h2>
+        <div id={styles.filterOptions}>
+            <div id={styles.tabSelection}>
+                <h2 onClick={() => { changeCommitteeView(false); filterBoard(allEntries); }} id={styles.tabItem} aria-label={committeeView ? '' : 'active'}>
+                    members
+                </h2>
+                <h2 onClick={() => { changeCommitteeView(true); filterBoard(allEntries); }} id={styles.tabItem} aria-label={committeeView ? 'active' : ''}>
+                    committees
+                </h2>
+            </div>
+            <input id={styles.searchBar} value={nameQuery} onChange={(e) => { changeNameQuery(e.target.value); }} placeholder='search name' aria-label={nameQuery.length > 0 ? 'active' : ''} />
         </div>
+        {
+            nameQuery.length > 0 ?
+            board.filter((x) => x.name.includes(nameQuery)).length > 0 ?
+                <div id={styles.container} aria-label="query">
+                {
+                    board.filter((x) => x.name.includes(nameQuery)).map((e: any, index: any) => <LeaderboardElement key={index} e={e} i={(index + 3)}/>)
+                }
+                </div> :
+                <div>
+                    <h2 id={styles.queryNotFound}>
+                        no results
+                    </h2>
+                </div>
+            : <></>
+        }
         <div id={styles.podium}>
             {
                 (board.length >= 3) &&

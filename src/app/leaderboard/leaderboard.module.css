@@ -56,6 +56,10 @@
 #container {
     min-width:30%;
     margin:2em 0 10em 0;
+
+    &[aria-label='query'] {
+        margin-bottom:2em;
+    }
 }
 
 .leaderboardElement {
@@ -112,35 +116,72 @@
     margin:5em 0;
 }
 
-#tabSelection {
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
 
+#filterOptions {
     width: 30em;
-
+    
     margin-top:1em;
 
-    & #tabItem {
-        font-size: 1.3rem;
-        font-family: var(--robotomono-font);
-        font-weight:400;
+    & #tabSelection {
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    
+        & #tabItem {
+            font-size: 1.3rem;
+            font-family: var(--robotomono-font);
+            font-weight:400;
+    
+            width:50%;
+            margin:0.5ch;
+            padding:0.2em 0;
+            border-radius:calc(0.8 * var(--border-radius));
+    
+            text-align:center;
+            cursor:pointer;
+            opacity: 0.5;
+    
+            transition-duration:0.3s;
+    
+            &[aria-label='active'] {
+                background:var(--background-secondary);
+                opacity: 1;
+            }
+        }
+    }
 
-        width:50%;
+    & #searchBar {
+        width:100%;
+
+        font-size:1.3rem;
+        font-family:var(--robotomono-font);
+
         margin:0.5ch;
-        padding:0.2em 0;
+        padding:0.2em 1ch;
+
+        background:var(--background-secondary);
+        color:var(--foreground);
+
+        border:none;
         border-radius:calc(0.8 * var(--border-radius));
 
-        text-align:center;
-        cursor:pointer;
         opacity: 0.5;
-
         transition-duration:0.3s;
 
-        &[aria-label='active'] {
-            background:var(--background-secondary);
+        &[aria-label='active'], &:focus {
             opacity: 1;
         }
     }
+}
+
+#queryNotFound {
+    margin-top:0.3em;
+
+    font-family:var(--robotomono-font);
+    font-size:1.2rem;
+    font-style:italic;
+    font-weight:400;
+
+    opacity: 0.5;
 }
